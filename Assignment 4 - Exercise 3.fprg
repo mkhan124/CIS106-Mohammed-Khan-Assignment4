@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-27 11:45:34 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBRQ1QyQ1Y7MjAyMS0wMi0yNzsxMToyMTo0OCBQTTszMzM1"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTBRQ1QyQ1Y7MjAyMS0wMi0yNzsxMTo0NTozNCBQTTszOzM0NDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numberofbooks" type="Real" array="False" size=""/>
+            <declare name="up" type="Real" array="False" size=""/>
+            <declare name="shipping" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the number of books to order&quot;" newline="True"/>
+            <input variable="numberofbooks"/>
+            <output expression="&quot;Enter the cost per book&quot;" newline="True"/>
+            <input variable="up"/>
+            <assign variable="total" expression="numberofbooks*up"/>
+            <if expression="total &lt;= 50">
+                <then>
+                    <assign variable="shipping" expression="25"/>
+                </then>
+                <else>
+                    <assign variable="shipping" expression="0"/>
+                </else>
+            </if>
+            <output expression="&quot;Total cost for books: &quot; &amp; total" newline="True"/>
+            <output expression="&quot;Shipping cost: &quot; &amp; shipping" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
