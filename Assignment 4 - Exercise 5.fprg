@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-28 07:48:32 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUkyQ0REQU87MjAyMS0wMi0yODswNzowNTo0NyBQTTszMzI5"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUkyQ0REQU87MjAyMS0wMi0yODswNzo0ODozMiBQTTsxOzM0Mzg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="numofdependents" type="Real" array="False" size=""/>
+            <declare name="grossinc" type="Real" array="False" size=""/>
+            <declare name="adjgrossinc" type="Real" array="False" size=""/>
+            <declare name="inctax" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter last name&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;Enter number of dependents&quot;" newline="True"/>
+            <input variable="numofdependents"/>
+            <output expression="&quot;Enter gross income&quot;" newline="True"/>
+            <input variable="grossinc"/>
+            <assign variable="adjgrossinc" expression="grossinc - (numofdependents * 12000)"/>
+            <if expression="adjgrossinc &lt;= 50000">
+                <then>
+                    <assign variable="inctax" expression="(adjgrossinc * 10)/100"/>
+                </then>
+                <else>
+                    <assign variable="inctax" expression="(adjgrossinc * 20)/100"/>
+                </else>
+            </if>
+            <output expression="&quot;Last name: &quot; &amp; lastname" newline="True"/>
+            <output expression="&quot;Gross Income: &quot; &amp; grossinc" newline="True"/>
+            <output expression="&quot;Number of dependents: &quot; &amp; numofdependents" newline="True"/>
+            <output expression="&quot;Adjusted Gross Income: &quot; &amp; adjgrossinc" newline="True"/>
+            <output expression="&quot;Income Tax: &quot; &amp; inctax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
